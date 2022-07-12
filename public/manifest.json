@@ -1,0 +1,26 @@
+{
+  "name": "Web Blocker",
+  "description": "Block unlimited website for free",
+  "version": "2.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "permissions": ["storage", "tabs"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "/images/Logo-16.png",
+      "32": "/images/Logo-32.png",
+      "48": "/images/Logo-48.png",
+      "128": "/images/Logo-128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/Logo-16.png",
+    "32": "/images/Logo-32.png",
+    "48": "/images/Logo-48.png",
+    "128": "/images/Logo-128.png"
+  },
+  "options_page": "option/option.html"
+}

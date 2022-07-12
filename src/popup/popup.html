@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/popup.css" />
+  </head>
+  <body>
+    <div class="headlineWrap">
+      <img id="logo" src="/images/Logo-32.png" alt="Logo" />
+      <h1 id="headline">Web Blocker</h1>
+    </div>
+    <section id="main">
+      <div id="notification" class="hide">
+        <span id="notificationSpan"></span>
+      </div>
+      <label class="inputLabel" for="URL">URL</label>
+      <input
+        id="URL"
+        type="text"
+        placeholder="Copy or type URL"
+        class="input inputURLPopup"
+      />
+      <button id="AddToBlocklist" class="button">Add To Blocklist</button>
+      <a id="editBlocklist" class="link" href="#">Edit Blocklist</a>
+    </section>
+
+    <script src="../popup/index.js"></script>
+  </body>
+</html>
