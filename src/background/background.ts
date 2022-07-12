@@ -1,10 +1,4 @@
-interface WebBlockerData {
-  WebsiteBlockerBlock?: string[];
-}
-
-interface WebBlockerRedirect {
-  WebsiteBlockerRedirect?: string;
-}
+import { WebBlockerData, WebBlockerRedirect } from '../types/types';
 
 let webBlockerData: WebBlockerData;
 let webBlockerRedirect: WebBlockerRedirect;
