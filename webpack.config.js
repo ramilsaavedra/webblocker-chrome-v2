@@ -10,6 +10,31 @@ let config = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /\.module\.css$/,
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+        ],
+        include: /\.module\.css$/,
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      },
     ],
   },
   resolve: {
@@ -38,11 +63,17 @@ let popupConfig = Object.assign({}, config, {
 });
 
 let optionConfig = Object.assign({}, config, {
-  entry: './src/option.ts',
+  entry: './src/option/index.tsx',
   output: {
-    filename: 'option.js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist/option'),
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/option/index.html',
+      filename: 'index.html',
+    }),
+  ],
 });
 
 let backgroundConfig = Object.assign({}, config, {
@@ -53,13 +84,5 @@ let backgroundConfig = Object.assign({}, config, {
   },
 });
 
-let publicConfig = Object.assign({}, config, {
-  plugins: [
-    new CopyPlugin({
-      patterns: [{ context: './public', from: './public' }],
-    }),
-  ],
-});
-
 // module.exports = [popupConfig, optionConfig, backgroundConfig];
-module.exports = [popupConfig, backgroundConfig];
+module.exports = [popupConfig, optionConfig];
