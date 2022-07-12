@@ -29,7 +29,10 @@ let popupConfig = Object.assign({}, config, {
       filename: 'popup.html',
     }),
     new CopyPlugin({
-      patterns: [{ from: 'public', to: '../' }],
+      patterns: [
+        { from: 'public', to: '../' },
+        { from: 'src/popup/popup.css' },
+      ],
     }),
   ],
 });

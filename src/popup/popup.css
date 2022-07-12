@@ -1,0 +1,271 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url(../fonts/Poppins-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url(../fonts/Poppins-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url(../fonts/Poppins-Light.ttf);
+  font-weight: light;
+}
+
+:root {
+  --main-red: #bc0735;
+  --sub-red: #8b0c2c;
+  --grey: #eeeeee;
+  --main-grey: #cccccc;
+  --black: #111;
+  --green: #34c240;
+  --red: #d64242;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 40px;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  background-color: var(--grey);
+}
+
+.mainWrap {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+}
+
+header {
+  /* border: 1px solid red; */
+  background-color: var(--black);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0px 20%;
+}
+
+.header h1 {
+  color: white;
+  font-weight: normal;
+}
+
+#logo {
+  margin: 0 15px;
+}
+
+.content {
+  max-width: 960px;
+  margin: 20px 25%;
+  padding: 15px 20px;
+  background-color: white;
+}
+
+.content h2 {
+  margin-top: 0px;
+}
+
+.input {
+  padding: 7px 5px;
+  border-radius: 5px;
+  border: 1.5px solid rgb(133, 131, 131);
+  height: 18px;
+}
+
+.input:focus {
+  border-color: var(--main-red);
+  outline: none;
+}
+
+.button {
+  background-color: var(--main-red);
+  border: 2px solid transparent;
+  color: white;
+  padding: 7px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-secondary {
+  border-color: var(--main-red);
+  background-color: white;
+  color: var(--main-red);
+}
+
+.button:active {
+  background-color: var(--sub-red);
+}
+
+.button-secondary:disabled,
+.button-secondary:disabled:active {
+  cursor: not-allowed;
+  border-color: var(--main-grey);
+  color: var(--main-grey);
+  background-color: var(--grey);
+}
+
+.button-secondary:active {
+  border-color: var(--sub-red);
+  color: var(--sub-red);
+  background-color: white;
+}
+
+.icon-button {
+  height: 20px;
+  width: 20px;
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.inputWrap {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 10px;
+}
+
+.presetWrap {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.blocklistWrap {
+  padding: 10px;
+}
+
+.timeInputWrap {
+  margin-top: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto 115px auto 115px 1fr;
+}
+
+.timeInputWrap label {
+  font-weight: bold;
+}
+
+.timeInputBtnWrap {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-gap: 10px;
+}
+
+#notification {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#notification img {
+  margin-right: 5px;
+  height: 30px;
+  width: 30px;
+}
+
+#notification span {
+  font-size: 14px;
+}
+
+#notification .success {
+  color: var(--green);
+}
+
+#notification .error {
+  color: var(--red);
+}
+
+#blocklistWrap {
+  padding: 10px;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  list-style: none;
+  margin-bottom: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#clearData {
+  margin-top: 10px;
+}
+
+.blockListItem {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  align-items: center;
+  border: 1px solid var(--main-grey);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.blockListItem span {
+  font-weight: bold;
+}
+
+.blockListItemButton {
+  background: white;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-left: 1px solid var(--main-grey); */
+}
+
+.hr {
+  margin: 20px 0;
+  border: 1px solid var(--main-grey);
+}
+
+.footer {
+  height: 40px;
+  background-color: var(--black);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    margin: 10px 5%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mainWrap {
+    grid-template-rows: 80px 1fr;
+  }
+  .header {
+    padding: 0;
+  }
+  .content {
+    margin: 10px 5px;
+  }
+
+  #blocklistWrap {
+    grid-template-columns: 1fr;
+  }
+}
