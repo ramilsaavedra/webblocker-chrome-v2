@@ -2,7 +2,7 @@
   "name": "web-blocker",
   "version": "2.0.0",
   "scripts": {
-    "dev": "webpack watch --mode=production --config webpack.config.js",
+    "dev": "webpack watch --mode=development --no-devtool --config webpack.config.js",
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
