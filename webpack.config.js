@@ -35,6 +35,10 @@ let config = {
           loader: 'url-loader',
         },
       },
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader',
+      },
     ],
   },
   resolve: {
@@ -85,4 +89,4 @@ let backgroundConfig = Object.assign({}, config, {
 });
 
 // module.exports = [popupConfig, optionConfig, backgroundConfig];
-module.exports = [popupConfig, optionConfig];
+module.exports = [optionConfig];
