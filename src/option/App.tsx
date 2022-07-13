@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 
 import Header from './layout/Header';
 import Footer from './layout/Footer';
-import Notification from './components/Notification';
 import Blocklist from './layout/Blocklist';
+import NotificationWrap from './layout/NotificationWrap';
+
+import { NotificationProvider } from './context/NotificationContext';
 
 function App() {
   return (
-    <div className='App'>
+    <NotificationProvider>
       <Header />
       <section className='content'>
-        <Notification type='success' message='test' />
+        <NotificationWrap />
         <Blocklist />
       </section>
       <Footer />
-    </div>
+    </NotificationProvider>
   );
 }
 
