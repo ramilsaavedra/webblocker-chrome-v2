@@ -3,26 +3,17 @@ import style from './button.module.css';
 
 type ButtonProps = {
   children?: React.ReactNode;
-  type?: 'secondary';
-  onClick?: () => void;
-  id?: string;
-  disabled?: boolean;
+  variant?: 'secondary';
 };
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  type,
-  onClick,
-  id,
-  disabled = false,
-}) => {
+const Button: React.FC<
+  ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+> = ({ variant, children, className, ...props }) => {
   return (
     <button
-      id={id}
-      onClick={onClick}
-      disabled={disabled}
-      className={`${style.button} ${
-        type === 'secondary' && style['button-secondary']
+      {...props}
+      className={`${className} ${style.button} ${
+        variant === 'secondary' && style['button-secondary']
       }`}
     >
       {children}
