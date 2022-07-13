@@ -158,7 +158,7 @@ header {
   margin-top: 10px;
 }
 
-.hr {
+hr {
   margin: 20px 0;
   border: 1px solid var(--main-grey);
 }
