@@ -32,7 +32,7 @@ const addToBlocklist = async (
 
     // check if site is already blocked
     if (blockList.includes(trimValidURL)) {
-      notificationHandler('This website is already blocked', 'error');
+      notificationHandler(`${trimValidURL} is already blocked`, 'error');
       return;
     } else {
       notificationHandler(`${trimValidURL} is blocked`, 'success');
