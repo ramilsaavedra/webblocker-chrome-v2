@@ -142,42 +142,20 @@ header {
   color: var(--red);
 }
 
-#blocklistWrap {
+.blocklistWrap {
   padding: 10px;
   border: 1px solid var(--grey);
   border-radius: 5px;
   list-style: none;
+  margin-top: 10px;
   margin-bottom: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
 
-#clearData {
+.clearData {
   margin-top: 10px;
-}
-
-.blockListItem {
-  display: grid;
-  grid-template-columns: 1fr 30px;
-  align-items: center;
-  border: 1px solid var(--main-grey);
-  border-radius: 5px;
-  padding: 5px 10px;
-}
-
-.blockListItem span {
-  font-weight: bold;
-}
-
-.blockListItemButton {
-  background: white;
-  cursor: pointer;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* border-left: 1px solid var(--main-grey); */
 }
 
 .hr {

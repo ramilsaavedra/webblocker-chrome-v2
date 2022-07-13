@@ -1,0 +1,21 @@
+.blockListItem {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  align-items: center;
+  border: 1px solid var(--main-grey);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.blockListItem-text {
+  font-weight: bold;
+}
+
+.blockListItemButton {
+  background: white;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
