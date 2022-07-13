@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from './layout/Header';
 import Footer from './layout/Footer';
+import Notification from './components/Notification';
 import Blocklist from './layout/Blocklist';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <div className='App'>
       <Header />
       <section className='content'>
-        {/* TODO: notifaction */}
+        <Notification type='success' message='test' />
         <Blocklist />
       </section>
       <Footer />
