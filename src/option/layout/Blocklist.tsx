@@ -9,6 +9,10 @@ const Blocklist = () => {
   const [url, setUrl] = useState('');
   const [blocklist, setBlocklist] = useState([]);
 
+  useEffect(() => {
+    getData();
+  }, []);
+
   const getData = async () => {
     const data: WebBlockerData = await chrome.storage.sync.get(
       'WebsiteBlockerBlock'
@@ -20,16 +24,6 @@ const Blocklist = () => {
       setBlocklist([]);
     }
   };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  useEffect(() => {
-    if (blocklist.length) {
-      console.log(blocklist);
-    }
-  }, [blocklist]);
 
   const onAddClick = async () => {
     // check if there is an input
