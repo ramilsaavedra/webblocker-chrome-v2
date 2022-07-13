@@ -6,13 +6,21 @@ type ButtonProps = {
   type?: 'secondary';
   onClick?: () => void;
   id?: string;
+  disabled?: boolean;
 };
 
-const Button: React.FC<ButtonProps> = ({ children, type, onClick, id }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  type,
+  onClick,
+  id,
+  disabled = false,
+}) => {
   return (
     <button
       id={id}
       onClick={onClick}
+      disabled={disabled}
       className={`${style.button} ${
         type === 'secondary' && style['button-secondary']
       }`}
