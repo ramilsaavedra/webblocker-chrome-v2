@@ -16,11 +16,17 @@ const addToBlocklist = async (
       return false;
     }
 
+    // dont block Oauth2 url
+    if (validURL.pathname.includes('oauth2')) {
+      notificationHandler('You cant block Oauth', 'error');
+      return false;
+    }
+
     let trimValidURL = validURL.hostname;
     //  if not exist generate block list data
     if (!blockList) {
       chrome.storage.sync.set({ WebsiteBlockerBlock: [trimValidURL] });
-      notificationHandler(`${trimValidURL} added to blocklist`, 'success');
+      notificationHandler(`${trimValidURL} is blocked`, 'success');
       return;
     }
 
@@ -29,7 +35,7 @@ const addToBlocklist = async (
       notificationHandler('This website is already blocked', 'error');
       return;
     } else {
-      notificationHandler(`${trimValidURL} added to blocklist`, 'success');
+      notificationHandler(`${trimValidURL} is blocked`, 'success');
       chrome.storage.sync.set({
         WebsiteBlockerBlock: [...blockList, trimValidURL],
       });
