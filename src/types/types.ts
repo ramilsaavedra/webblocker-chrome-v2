@@ -27,3 +27,76 @@ export interface ScheduleDataInterface {
   isActive: 0 | 1;
   schedule: TimeDataInterface[];
 }
+
+export const initSchedData: ScheduleDataInterface[] = [
+  {
+    name: 'monday',
+    isActive: 1,
+    schedule: [
+      {
+        from: '00:00',
+        to: '23:59',
+      },
+    ],
+  },
+  {
+    name: 'tuesday',
+    isActive: 1,
+    schedule: [
+      {
+        from: '00:00',
+        to: '23:59',
+      },
+    ],
+  },
+  {
+    name: 'wednesday',
+    isActive: 1,
+    schedule: [
+      {
+        from: '00:00',
+        to: '23:59',
+      },
+    ],
+  },
+  {
+    name: 'thursday',
+    isActive: 1,
+    schedule: [
+      {
+        from: '00:00',
+        to: '23:59',
+      },
+    ],
+  },
+  {
+    name: 'friday',
+    isActive: 1,
+    schedule: [
+      {
+        from: '00:00',
+        to: '23:59',
+      },
+    ],
+  },
+  {
+    name: 'saturday',
+    isActive: 1,
+    schedule: [
+      {
+        from: '00:00',
+        to: '23:59',
+      },
+    ],
+  },
+  {
+    name: 'sunday',
+    isActive: 1,
+    schedule: [
+      {
+        from: '00:00',
+        to: '23:59',
+      },
+    ],
+  },
+];

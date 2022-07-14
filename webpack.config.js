@@ -88,5 +88,5 @@ let backgroundConfig = Object.assign({}, config, {
   },
 });
 
-// module.exports = [popupConfig, optionConfig, backgroundConfig];
-module.exports = [optionConfig, popupConfig];
+module.exports = [popupConfig, optionConfig, backgroundConfig];
+// module.exports = [optionConfig, popupConfig];
