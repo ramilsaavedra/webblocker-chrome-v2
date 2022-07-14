@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './App.css';
-
+import { NotificationProvider } from './context/NotificationContext';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import Blocklist from './layout/Blocklist';
 import NotificationWrap from './layout/NotificationWrap';
 import Redirect from './layout/Redirect';
-
-import { NotificationProvider } from './context/NotificationContext';
+import ScheduleBlocking from './layout/ScheduleBlocking';
 
 function App() {
   return (
@@ -18,6 +17,8 @@ function App() {
         <Blocklist />
         <hr />
         <Redirect />
+        <hr />
+        <ScheduleBlocking />
       </section>
       <Footer />
     </NotificationProvider>

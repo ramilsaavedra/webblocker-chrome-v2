@@ -28,7 +28,6 @@
 
 body {
   margin: 0;
-  margin-bottom: 40px;
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
   background-color: var(--grey);
   font-size: 75%;
@@ -117,31 +116,6 @@ header {
   grid-gap: 10px;
 }
 
-#notification {
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#notification img {
-  margin-right: 5px;
-  height: 30px;
-  width: 30px;
-}
-
-#notification span {
-  font-size: 14px;
-}
-
-#notification .success {
-  color: var(--green);
-}
-
-#notification .error {
-  color: var(--red);
-}
-
 .blocklistWrap {
   padding: 10px;
   border: 1px solid var(--grey);
@@ -163,6 +137,57 @@ hr {
   border: 1px solid var(--main-grey);
 }
 
+.scheduleWrap {
+  display: grid;
+  grid-gap: 5px;
+}
+
+.scheduleItemWrap {
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.scheduleItemCheckboxWrap {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  height: 30px;
+}
+
+.scheduleItemCheckboxWrap > * {
+  cursor: pointer;
+}
+
+.scheduleItemCheckboxWrap label {
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 110%;
+}
+
+.scheduleItemTime {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto 115px auto 115px 1fr;
+  padding: 5px;
+}
+
+.scheduleItemTime label {
+  font-weight: bold;
+}
+
+.scheduleLabel {
+  text-transform: capitalize;
+}
+
+.applyScheduleBtn {
+  margin-top: 10px;
+}
+
+input[type='checkbox']:checked {
+  accent-color: var(--main-red);
+}
+
 .footer {
   height: 40px;
   background-color: var(--black);
@@ -170,10 +195,6 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
 }
 
 .footer a {
