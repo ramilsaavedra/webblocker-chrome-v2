@@ -3,82 +3,9 @@ import Button from '../components/Button';
 import NotificationContext from '../context/NotificationContext';
 import {
   ScheduleDataInterface,
-  TimeDataInterface,
+  initSchedData,
   WebBlockerSchedule,
 } from '../../types/types';
-
-const initSchedData: ScheduleDataInterface[] = [
-  {
-    name: 'monday',
-    isActive: 1,
-    schedule: [
-      {
-        from: '',
-        to: '',
-      },
-    ],
-  },
-  {
-    name: 'tuesday',
-    isActive: 1,
-    schedule: [
-      {
-        from: '',
-        to: '',
-      },
-    ],
-  },
-  {
-    name: 'wednesday',
-    isActive: 1,
-    schedule: [
-      {
-        from: '',
-        to: '',
-      },
-    ],
-  },
-  {
-    name: 'thursday',
-    isActive: 1,
-    schedule: [
-      {
-        from: '',
-        to: '',
-      },
-    ],
-  },
-  {
-    name: 'friday',
-    isActive: 1,
-    schedule: [
-      {
-        from: '',
-        to: '',
-      },
-    ],
-  },
-  {
-    name: 'saturday',
-    isActive: 1,
-    schedule: [
-      {
-        from: '',
-        to: '',
-      },
-    ],
-  },
-  {
-    name: 'sunday',
-    isActive: 1,
-    schedule: [
-      {
-        from: '',
-        to: '',
-      },
-    ],
-  },
-];
 
 const ScheduleBlocking = () => {
   const { notificationHandler } = useContext(NotificationContext);
