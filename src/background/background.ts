@@ -53,6 +53,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
       time = date.toLocaleTimeString([], {
         hour: '2-digit',
         minute: '2-digit',
+        hourCycle: 'h23',
       });
       todaySchedule = webBlockerSchedule.WebsiteBlockerSchedule.find(
         (schedule) => schedule.name === day
@@ -77,11 +78,13 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
         return;
       }
 
-      console.log(
-        time,
-        todaySchedule.schedule[0].from,
-        time >= todaySchedule.schedule[0].from
-      );
+      // console.log(
+      //   time,
+      //   todaySchedule.schedule[0].from,
+      //   time >= todaySchedule.schedule[0].from,
+      //   time < todaySchedule.schedule[0].to
+      // );
+
       if (
         time >= todaySchedule.schedule[0].from &&
         time < todaySchedule.schedule[0].to
