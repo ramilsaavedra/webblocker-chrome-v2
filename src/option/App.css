@@ -95,6 +95,14 @@ header {
   grid-gap: 10px;
 }
 
+.notificationWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 30px;
+  padding-left: 100px;
+}
+
 .blocklistWrap {
   padding: 10px;
 }

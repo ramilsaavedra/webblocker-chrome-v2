@@ -5,9 +5,9 @@ import NotificationContext from '../context/NotificationContext';
 const NotificationWrap = () => {
   const { notification } = useContext(NotificationContext);
   return (
-    <>
+    <div className='notificationWrap'>
       <Notification type={notification.type} message={notification.message} />
-    </>
+    </div>
   );
 };
 

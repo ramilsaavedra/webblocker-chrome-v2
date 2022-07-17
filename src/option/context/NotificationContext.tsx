@@ -18,6 +18,8 @@ const defaultContext: NotificationContextInterface = {
 const NotificationContext =
   createContext<NotificationContextInterface>(defaultContext);
 
+let timeout: ReturnType<typeof setTimeout>;
+
 export const NotificationProvider: React.FC<NotificationProviderProps> = ({
   children,
 }) => {
@@ -28,6 +30,15 @@ export const NotificationProvider: React.FC<NotificationProviderProps> = ({
 
   const notificationHandler = (notification: NotificationProps) => {
     setNotification(notification);
+    clearNotification();
+  };
+
+  const clearNotification = () => {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+      setNotification({ type: null, message: null });
+    }, 3000);
   };
 
   return (
