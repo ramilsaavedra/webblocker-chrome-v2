@@ -3,18 +3,60 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  animation: slideInLeft 0.3s;
+}
+
+.notification::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.notification-success.notification::after {
+  background: var(--green);
+}
+
+.notification-error.notification::after {
+  background: var(--red);
 }
 
 .notification-icon {
   margin-right: 5px;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
 }
 
+.notification span {
+  font-size: 14px;
+}
 .notification-success {
   color: var(--green);
 }
 
 .notification-error {
   color: var(--red);
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
 }

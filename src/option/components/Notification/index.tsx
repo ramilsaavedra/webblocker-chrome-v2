@@ -10,7 +10,7 @@ const Notification: React.FC<NotificationProps> = ({ type, message }) => {
   }
 
   return (
-    <div className={style.notification}>
+    <div className={`${style.notification} ${style[`notification-${type}`]}`}>
       <img
         className={style['notification-icon']}
         src={type === 'error' ? error : success}
