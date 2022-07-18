@@ -56,9 +56,6 @@ const ScheduleBlocking = () => {
   useEffect(() => {
     getData();
   }, []);
-  useEffect(() => {
-    console.log(scheduleData, 'data');
-  }, [scheduleData]);
 
   return (
     <>
