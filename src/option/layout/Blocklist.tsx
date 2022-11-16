@@ -86,7 +86,9 @@ const Blocklist = () => {
   };
 
   const onClearClick = async () => {
-    await chrome.storage.sync.clear();
+    await chrome.storage.sync.set({
+      WebsiteBlockerBlock: [],
+    });
     notificationHandler({
       type: 'success',
       message: 'Blocklist has been cleared',
@@ -101,7 +103,9 @@ const Blocklist = () => {
       });
 
       if (!filterBlocklist.length) {
-        await chrome.storage.sync.clear();
+        await chrome.storage.sync.set({
+          WebsiteBlockerBlock: [],
+        });
       } else {
         await chrome.storage.sync.set({
           WebsiteBlockerBlock: filterBlocklist,
