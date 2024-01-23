@@ -1,8 +1,8 @@
 import {
+  ScheduleDataInterface,
   WebBlockerData,
   WebBlockerRedirect,
   WebBlockerSchedule,
-  ScheduleDataInterface,
   initSchedData,
 } from '../types/types';
 
@@ -101,14 +101,13 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
           const { hostname } = new URL(tab.url);
           let blocked = webBlockerData.WebsiteBlockerBlock.includes(hostname);
           if (blocked) {
-            console.log(blocked, 'blocked');
-            if (webBlockerRedirect.WebsiteBlockerRedirect) {
-              chrome.tabs.update(tabId, {
-                url: webBlockerRedirect.WebsiteBlockerRedirect,
-              });
-            } else {
-              chrome.tabs.update(tabId, { url: 'chrome://newtab' });
-            }
+            console.log(blocked, "blocked");
+            let newUrl = webBlockerRedirect.WebsiteBlockerRedirect ?? "chrome://newtab";
+
+            // tabs.update will not keep target URL in history so let's save it first
+            chrome.history.addUrl({ url: tab.url }).then(() => {
+              chrome.tabs.update(tabId, { url: newUrl });
+            });
           }
         }
       }
